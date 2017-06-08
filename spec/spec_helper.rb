@@ -96,4 +96,12 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+
+  config.before(:suite) do
+    # reindex models
+    OffPiste.reindex
+
+    # and disable callbacks
+    Searchkick.disable_callbacks
+  end
 end
