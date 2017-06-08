@@ -21,11 +21,16 @@ describe OffPiste do
     it { expect(OffPiste).to respond_to :search_name_advanced }
 
     it "should allow sorting of off-piste lines by descending ski_difficulty" do
-      expect(OffPiste.search_name_advanced({ filter: "ski_difficulty", order: "desc" }).first.ski_difficulty).to eq(5)
+      expect(OffPiste.search_name_advanced({ field: "ski_difficulty", order: "desc" }).first.ski_difficulty).to eq(5)
     end
 
     it "should allow sorting of off-piste lines by ascending ski_difficulty" do
-      expect(OffPiste.search_name_advanced({ filter: "ski_difficulty", order: "asc" }).first.ski_difficulty).to eq(2)
+      expect(OffPiste.search_name_advanced({ field: "ski_difficulty", order: "asc" }).first.ski_difficulty).to eq(2)
+    end
+
+    it "should allow filtering of off-piste lines by greater than" do
+      result = OffPiste.search_name_advanced({ field: "ski_difficulty", order: "asc", filter: "gt", filter_number: 3 }).select{ |p| p.ski_difficulty <= 3 }.empty?
+      expect(result).to eq(false)
     end
   end
 
