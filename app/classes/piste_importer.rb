@@ -3,6 +3,7 @@ class PisteImporter
   # Loop through off-pistes.json and store Piste into database
   def self.import!
     pistes = read_file
+
   end
 
   private
@@ -12,6 +13,5 @@ class PisteImporter
     file = File.read Rails.root.join('lib', 'off-pistes.json')
     JSON.parse(file)
   end
-
 
 end
