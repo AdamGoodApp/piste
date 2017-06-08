@@ -8,4 +8,12 @@ FactoryGirl.define do
     geo_data {}
   end
 
+  factory :piste2, class: OffPiste do
+    piste_id 14490
+    name "Couloir Domenech"
+    description "This couloir is hidden deeply up the Miage glacier. It is not often repeated since it's extremely steep and narrow and usually some parts are too dry to be skied. Furthermore, just to the side of this line there is the well known Bonatti couloir which attracts more people. This couloir can be reached by Arp lift. Leaving the lift stay on your right without loosing height to reach the ridge. Here keep traversing on your left until reaching a flat part, where with your skins or walking (10 mins) you will arrive on a flat bowl. Put your skis on and start descending keeping your left. until reaching a small bridge. Put your skins back on and start climbing up right in front of you to enter Miage glacier. In 1 - 1.5 hours you will reach the base of the couloir, where the true fatigue will start! You will have to bootpack the 1000 metre couloir, with the cold north wind coming down from it. In the middle of the couloir there can be a rocky step for which a 30 metre rope can be useful The way back follows the glacial moraine, just follow back your skin track until you reach the bridge. Here continue following the evident road that will bring you to Val Very lifts. The lifts close at 4.30 pm, but you can also keep skiing the road in order to reach the Courmayeur parking area."
+    ski_difficulty 5
+    geo_data {}
+  end
+
 end
