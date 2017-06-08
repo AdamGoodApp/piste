@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20170608153106) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "pistes", force: :cascade do |t|
+    t.integer "piste_id"
+    t.string  "name"
+    t.text    "description"
+    t.integer "ski_difficulty"
+    t.jsonb   "geo_data"
+    t.index ["name"], name: "index_pistes_on_name", using: :btree
+    t.index ["piste_id"], name: "index_pistes_on_piste_id", using: :btree
+  end
 
 end

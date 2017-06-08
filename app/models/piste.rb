@@ -1,0 +1,3 @@
+class Piste < ApplicationRecord
+  
+end
