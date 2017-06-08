@@ -40,6 +40,16 @@ gem 'searchkick'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'rspec-rails', '~> 3.0'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  gem 'faker'
+
+  # Test framework
+  gem 'rspec'
+
+  # Needed for Rails 5
+  gem 'rails-controller-testing'
 end
 
 group :development do
