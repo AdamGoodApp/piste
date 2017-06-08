@@ -110,25 +110,6 @@
         <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="LAUNCH_JS" VALUE="false" />
         <method />
       </configuration>
-      <configuration default="false" name="seeds" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
-        <module name="piste" />
-        <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
-        <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$/db" />
-        <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
-        <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
-        <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
-        <envs />
-        <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
-        <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
-        <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
-          <COVERAGE_PATTERN ENABLED="true">
-            <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
-          </COVERAGE_PATTERN>
-        </EXTENSION>
-        <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/db/seeds.rb" />
-        <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
-        <method />
-      </configuration>
       <configuration default="false" name="pistes:import: piste" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
         <module name="piste" />
         <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
@@ -225,6 +206,25 @@
         <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
         <method />
       </configuration>
+      <configuration default="false" name="pistes" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
+        <module name="piste" />
+        <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+        <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$/lib/tasks" />
+        <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+        <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+        <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+        <envs />
+        <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
+        <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+        <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+          <COVERAGE_PATTERN ENABLED="true">
+            <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+          </COVERAGE_PATTERN>
+        </EXTENSION>
+        <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/lib/tasks/pistes.rake" />
+        <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+        <method />
+      </configuration>
     </local>
   </component>
   <component name="NewModuleRootManager">
@@ -246,6 +246,7 @@
     <orderEntry type="library" scope="PROVIDED" name="activejob (v5.0.3, RVM: ruby-2.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activemodel (v5.0.3, RVM: ruby-2.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activerecord (v5.0.3, RVM: ruby-2.3.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="activerecord-import (v0.18.3, RVM: ruby-2.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activesupport (v5.0.3, RVM: ruby-2.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="arel (v7.1.4, RVM: ruby-2.3.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bindex (v0.5.0, RVM: ruby-2.3.0) [gem]" level="application" />

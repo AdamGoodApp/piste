@@ -1,0 +1,3 @@
+class OffPiste < ApplicationRecord
+
+end

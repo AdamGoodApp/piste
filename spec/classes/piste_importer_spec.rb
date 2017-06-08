@@ -6,10 +6,7 @@ describe PisteImporter do
   describe 'self.import!' do
     it { expect(PisteImporter).to respond_to :import! }
 
-    it "should insert pistes into database" do
-      expect(Piste.last.piste_id).to eq(piste{"id"})
-    end
-
+    #TODO: Create import task to insert off-pistes into test database
   end
 
   describe 'self.read_file' do
@@ -18,7 +15,6 @@ describe PisteImporter do
     it "should return an array including pistes" do
       expect(PisteImporter.read_file).to include(a_kind_of(Hash))
     end
-
   end
 
 end
