@@ -8,22 +8,12 @@ class OffPiste < ApplicationRecord
   end
 
   def self.search_name_advanced(params)
-    if params.key?('filter')
-      search_by_greater(params) if params[:filter] == "gt"
-      search_by_less(params) if params[:filter] == "lt"
+    if params.key?(:filter)
+      filter = params[:filter].parameterize.underscore.to_sym
+      OffPiste.search('*', where: { params[:field] => {filter => params[:filter_number].to_i} } , order: { params[:field] => params[:order] }).map { |w| w }
     else
       OffPiste.search('*', order: { params[:field] => params[:order] }).map { |w| w }
     end
-  end
-
-  private
-
-  def self.search_by_greater(params)
-    OffPiste.search('*', where: { params[:field] => {gt: params[:field_number].to_i} } , order: { params[:field] => params[:order] }).map { |w| w }
-  end
-
-  def self.search_by_less(params)
-    OffPiste.search('*', where: { params[:field] => {lt: params[:field_number].to_i} } , order: { params[:field] => params[:order] }).map { |w| w }
   end
 
 end

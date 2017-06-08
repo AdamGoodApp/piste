@@ -29,8 +29,13 @@ describe OffPiste do
     end
 
     it "should allow filtering of off-piste lines by greater than" do
-      result = OffPiste.search_name_advanced({ field: "ski_difficulty", order: "asc", filter: "gt", filter_number: 3 }).select{ |p| p.ski_difficulty <= 3 }.empty?
-      expect(result).to eq(false)
+      result = OffPiste.search_name_advanced({ field: "ski_difficulty", order: "asc", filter: "gt", filter_number: 3 }).select{ |p| p.ski_difficulty < 3 }.empty?
+      expect(result).to eq(true)
+    end
+
+    it "should allow filtering of off-piste lines by less than" do
+      result = OffPiste.search_name_advanced({ field: "ski_difficulty", order: "asc", filter: "lt", filter_number: 3 }).select{ |p| p.ski_difficulty > 3 }.empty?
+      expect(result).to eq(true)
     end
   end
 
