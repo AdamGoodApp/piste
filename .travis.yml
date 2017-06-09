@@ -1,3 +1,8 @@
 language: ruby
 rvm:
   - 2.3.0-p0
+services:
+  - elasticsearch
+before_script:
+  - sleep 10
+  - psql -c 'create database piste_test;' -U postgres
