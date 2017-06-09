@@ -3,7 +3,14 @@ module Api
     class PistesController < ApplicationController
 
       def search_name
-        render json: { result: "" }
+        result = OffPiste.search_name(name_params[:name])
+        render json: { result: result }
+      end
+
+      private
+
+      def name_params
+        params.require(:piste).permit(:name)
       end
 
     end
