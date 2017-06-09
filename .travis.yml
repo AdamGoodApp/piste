@@ -12,6 +12,7 @@ before_script:
   - psql -c 'create database piste_test;' -U postgres
 env:
   - ES_VERSION=5.4.1 ES_DOWNLOAD_URL=https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-${ES_VERSION}.tar.gz
+  - RAILS_ENV=test
 install:
   - wget ${ES_DOWNLOAD_URL}
   - tar -xzf elasticsearch-${ES_VERSION}.tar.gz
