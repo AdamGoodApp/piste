@@ -3,13 +3,17 @@
   <h1 class="title-down">Finding your line</h1>
 </div>
 
-<fieldset class="field-container">
-  <input type="text" placeholder="Search..." class="field" />
-  <div class="icons-container">
-    <div class="icon-search"></div>
-    <div class="icon-close">
-      <div class="x-up"></div>
-      <div class="x-down"></div>
-    </div>
-  </div>
-</fieldset>
+<%= form_tag({controller: "api/v1/pistes", action: "search_name"}, method: "post") do %>
+
+    <fieldset class="field-container">
+      <%= text_field_tag 'piste[name]', nil, placeholder: 'Search...', class: 'field'  %>
+      <div class="icons-container">
+        <div class="icon-search"></div>
+        <div class="icon-close">
+          <div class="x-up"></div>
+          <div class="x-down"></div>
+        </div>
+      </div>
+    </fieldset>
+
+<% end %>
