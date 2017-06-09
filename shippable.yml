@@ -1,0 +1,20 @@
+language: ruby
+
+rvm:
+  - 2.3.0
+
+services:
+  - postgresql
+
+build:
+  ci:
+    # Setup CI config
+    - mkdir -p shippable/testresults
+    - mkdir -p shippable/codecoverage
+    # Setup Database & Gems
+    - psql -c 'create database "piste_test";' -U postgres
+    - cp config/database.shippable.yml config/database.yml
+    - bundle install
+    - RAILS_ENV=test rails db:reset
+    # Run
+    - COVERAGE_REPORTS=shippable/codecoverage rspec -f shippable/testresults/results.xml
