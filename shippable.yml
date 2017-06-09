@@ -15,7 +15,7 @@ build:
     # Setup Database & Gems
     - psql -c 'create role shippable with superuser;' -U postgres
     - psql -c 'create database piste_test;' -U postgres
-#    - cp config/database.shippable.yml config/database.yml
+    - cp config/database.shippable.yml config/database.yml
     - bundle install
     - RAILS_ENV=test rails db:reset
     # Run
