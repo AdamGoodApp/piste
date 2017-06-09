@@ -4,7 +4,8 @@ rvm:
   - 2.3.0
 
 services:
-  - postgresql
+  - postgres
+  - elasticsearch
 
 build:
   ci:
@@ -12,7 +13,8 @@ build:
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
     # Setup Database & Gems
-    - psql -c 'create database "piste_test";' -U postgres
+    - psql -c 'create role shippable with superuser;' -U postgres
+    - psql -c 'create database piste_test;' -U postgres
     - cp config/database.shippable.yml config/database.yml
     - bundle install
     - RAILS_ENV=test rails db:reset
