@@ -7,7 +7,9 @@ class OffPiste < ApplicationRecord
     OffPiste.search(field, fields: [:name]).first
   end
 
-  def self.search_name_advanced(params)
+  # Search field via elastic search
+  # elastic search includes filtering and ordering
+  def self.search_advanced(params)
     if params.key?(:filter)
       filter = params[:filter].parameterize.underscore.to_sym
       OffPiste.search('*', where: { params[:field] => {filter => params[:filter_number].to_i} } , order: { params[:field] => params[:order] }).map { |w| w }
