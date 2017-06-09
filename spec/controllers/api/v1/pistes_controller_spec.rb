@@ -10,4 +10,13 @@ describe Api::V1::PistesController do
     end
   end
 
+  context '.search_advanced' do
+    it "returns a piste filtered and ordered by ski difficulty" do
+      post :search_advanced, params: { piste: piste_params }
+      expect(response).to be_success
+      expect(json["result"]).to be_a(Array)
+      expect(json["result"][0]["ski_difficulty"]).to be > piste_params[:filter_number]
+    end
+  end
+
 end
