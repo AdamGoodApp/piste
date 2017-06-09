@@ -37,6 +37,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'searchkick'
 gem 'activerecord-import'
+gem 'rake'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -44,7 +45,6 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'factory_girl_rails'
   gem 'faker'
-  gem 'rake'
   # Test framework
   gem 'rspec'
 
