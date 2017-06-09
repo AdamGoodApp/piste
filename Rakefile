@@ -4,3 +4,7 @@
 require_relative 'config/application'
 
 Rails.application.load_tasks
+
+RSpec::Core::RakeTask.new
+
+task :default => :spec
