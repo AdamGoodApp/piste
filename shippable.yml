@@ -18,4 +18,4 @@ build:
     - bundle install
     - RAILS_ENV=test rails db:reset
     # Run
-    - COVERAGE_REPORTS=shippable/codecoverage rspec -f shippable/testresults/results.xml
+    - COVERAGE_REPORTS=shippable/codecoverage rspec
