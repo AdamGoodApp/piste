@@ -27,5 +27,51 @@ Elasticsearch is a search engine based on Lucene. It provides a distributed, mul
 Testing is built using Rspec.
 In the root directory, run tests with:
 <br />
-<br />
+
 `rspec spec`
+
+## API Endpoints
+The API is built with versioning.
+<br />
+
+All requests are made via the base URL:
+<br />
+<br />
+`127.0.0.1:3000/api/`
+
+
+__Search an off-piste line by name or partial name__
+<br />
+<br />
+URL: 
+<br />
+
+`pistes/search-name`
+
+Parameters: 
+
+`{ pistes: { name: "Crochues-Berard Traverse" } }`
+
+Example:
+
+```
+curl -XPOST -H "Content-type: application/json" -d '{"piste": {"name": "Crochues-Berard Traverse"}}' 'http://127.0.0.1:3000/api/pistes/search-name'
+```
+
+__Filter off-piste lines by ski difficulty and order__
+<br />
+<br />
+URL: 
+<br />
+
+`pistes/search-advanced`
+
+Parameters: 
+
+`{ name: "Crochues-Berard Traverse", field: "ski_difficulty", order: "asc", filter: "gt", filter_number: 3 }`
+
+Example:
+
+```
+curl -XPOST -H "Content-type: application/json" -d '{"name": "Crochues-Berard Traverse", "field": "ski_difficulty","order": "asc", "filter": "gt", "filter_number": 3}' 'http://127.0.0.1:3000/api/pistes/search-advanced'
+```
