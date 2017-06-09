@@ -1,24 +1,31 @@
-# README
+# Off Pistes
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Search for Off Pistes.
 
-Things you may want to cover:
+## Installation (OSX)
 
-* Ruby version
+#### Postgresql
+The web app uses Postgresql for the database
 
-* System dependencies
+* `brew install postgresql`
 
-* Configuration
+#### Ruby On Rails
+Ruby on Rails, is a server-side web application framework written in Ruby. Rails is a model–view–controller (MVC) framework, providing default structures for a database, a web service, and web pages.
 
-* Database creation
+* `bundle install`
+* `rails db:setup`
+* Import off-piste.json into database with: `rails pistes:import`
+* Start server `rails s`
 
-* Database initialization
+#### Elasticsearch
+Elasticsearch is a search engine based on Lucene. It provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents.
 
-* How to run the test suite
+* `brew install elasticsearch`
+* `brew services start elasticsearch`
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Tests
+Testing is built using Rspec.
+In the root directory, run tests with:
+<br />
+<br />
+`rspec spec`
