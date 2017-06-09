@@ -10,6 +10,7 @@ dist: trusty
 before_script:
   - sleep 10
   - psql -c 'create database piste_test;' -U postgres
+  - bundle install rspec
 env:
   - ES_VERSION=5.4.1 ES_DOWNLOAD_URL=https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-${ES_VERSION}.tar.gz
 install:
