@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     scope module: :v1, constraints: ApiConstraints.new(version: 1, default: :true) do
       match 'pistes/search-name' => 'pistes#search_name', :via => :post
       match 'pistes/search-advanced' => 'pistes#search_advanced', :via => :post
+      match 'pistes/canvas' => 'pistes#canvas', :via => :post
     end
   end
 

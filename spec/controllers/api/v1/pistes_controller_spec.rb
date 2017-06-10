@@ -19,4 +19,11 @@ describe Api::V1::PistesController do
     end
   end
 
+  context '.canvas' do
+    it "returns a html canvas object containing the off piste line" do
+      post :canvas, params: { piste: {piste_id: 9514} }
+      expect(response).to be_success
+    end
+  end
+
 end
