@@ -56,11 +56,21 @@ __Filter off-piste lines by ski difficulty and order__
 
 POST `/pistes/search-advanced`
 
-`{ name: "Crochues-Berard Traverse", field: "ski_difficulty", order: "asc", filter: "gt", filter_number: 3 }`
+`{ piste: { name: "Crochues-Berard Traverse", field: "ski_difficulty", order: "asc", filter: "gt", filter_number: 3 } }`
 
 ```
 curl -XPOST -H "Content-type: application/json" -d '{"name": "Crochues-Berard Traverse", "field": "ski_difficulty","order": "asc", "filter": "gt", "filter_number": 3}' 'http://127.0.0.1:3000/api/pistes/search-advanced'
 ```
+
+__HTML Canvas object containing an off piste line__
+
+POST `/pistes/canvas`
+
+`{ piste: {piste_id: 9514} }`
+
+```
+curl -XPOST -H "Content-type: application/json" -d '{"piste":{"piste_id":6229}}' 'http://127.0.0.1:3000/api/pistes/canvas'
+
 
 ## Future improvements
 
