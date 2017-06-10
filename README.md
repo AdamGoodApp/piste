@@ -16,6 +16,7 @@ Ruby on Rails, is a server-side web application framework written in Ruby. Rails
 * `rails db:setup`
 * Import off-piste.json into database with: `rails pistes:import`
 * Start server `rails s`
+* Access the front end in your browser at `127.0.0.1:3000`
 
 #### Elasticsearch
 Elasticsearch is a search engine based on Lucene. It provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents.
