@@ -1,0 +1,45 @@
+<canvas id="lineCanvas" width="800" height="600" style="border:1px solid #000000;background-color: #3498db"></canvas>
+
+<script type="text/javascript">
+  var c = lineCanvas;
+  var ctx = c.getContext("2d");
+  var data = gon.piste["geo_data"]["coordinates"];
+
+  var minx,miny,maxx,maxy;
+  miny = minx = Infinity;
+  maxx = maxy = -Infinity;
+
+  data.forEach(dat => {
+    dat.forEach(point => {
+    minx = Math.min(minx,point[0]);
+  miny = Math.min(miny,point[1]);
+  maxx = Math.max(maxx,point[0]);
+  maxy = Math.max(maxy,point[1]);
+  });
+  });
+
+  var rangeX = maxx - minx;
+  var rangeY = maxy - miny;
+  var range = Math.max(rangeX,rangeY);
+  var scale = Math.min(c.width,c.height);
+
+  data.forEach(dat => {
+    ctx.beginPath();
+  dat.forEach(point => {
+    var x = point[0];
+  var y = point[1];
+  x = ((x-minx) / range) * scale;
+  y = ((y-miny) / range) * scale;
+  ctx.lineTo(x,y);
+  });
+  ctx.strokeStyle = '#ecf0f1';
+  ctx.stroke();
+  });
+
+
+</script>
+
+
+
+
+
