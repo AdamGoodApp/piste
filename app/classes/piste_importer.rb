@@ -1,7 +1,7 @@
 class PisteImporter
 
   # Loop through off-pistes.json and store Piste into database
-  # Use bulk insert to speed up storing records
+  # Use bulk insert to speed up storing records and avoid N+1 queries
   def self.import!
     pistes_to_import = read_file.map do |p|
      {

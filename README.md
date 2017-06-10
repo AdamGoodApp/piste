@@ -30,6 +30,8 @@ In the root directory, run tests with:
 
 `rspec spec`
 
+Continuous integration is integrated via Shippable.
+
 ## API Endpoints
 The API is built with versioning.
 <br />
@@ -37,41 +39,41 @@ The API is built with versioning.
 All requests are made via the base URL:
 <br />
 <br />
-`127.0.0.1:3000/api/`
-
+`127.0.0.1:3000/api`
 
 __Search an off-piste line by name or partial name__
-<br />
-<br />
-URL: 
-<br />
 
-`pistes/search-name`
-
-Parameters: 
+POST `/pistes/search-name`
 
 `{ pistes: { name: "Crochues-Berard Traverse" } }`
-
-Example:
 
 ```
 curl -XPOST -H "Content-type: application/json" -d '{"piste": {"name": "Crochues-Berard Traverse"}}' 'http://127.0.0.1:3000/api/pistes/search-name'
 ```
 
 __Filter off-piste lines by ski difficulty and order__
-<br />
-<br />
-URL: 
-<br />
 
-`pistes/search-advanced`
-
-Parameters: 
+POST `/pistes/search-advanced`
 
 `{ name: "Crochues-Berard Traverse", field: "ski_difficulty", order: "asc", filter: "gt", filter_number: 3 }`
-
-Example:
 
 ```
 curl -XPOST -H "Content-type: application/json" -d '{"name": "Crochues-Berard Traverse", "field": "ski_difficulty","order": "asc", "filter": "gt", "filter_number": 3}' 'http://127.0.0.1:3000/api/pistes/search-advanced'
 ```
+
+## Future improvements
+
+__Splitting application into microservices__ 
+
+* Elasticsearch can be deployed in several clusters to allow dynamic scalling. This can allow for Searching to be scalable in dealing with requests efficiently and with speed.
+
+* The Rails web app can be initialised via the API mode to remove view logic, assets and only serve JSON.
+
+* Front End can be built separately using a modern Framework such as React to consume the Rails API.
+
+__Using NoSql databases to store JSON records__
+
+A NoSql database such as MongoDB or Redis can be used to Read/Write the off piste JSON records with greater speed.
+
+However, the data could likely require relational tables in the future. The Latest version of Postgresql can provide both a Relational Database with JSON stored fields providing greater flexibility.
+ 
