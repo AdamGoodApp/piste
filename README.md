@@ -70,7 +70,7 @@ POST `/pistes/canvas`
 
 ```
 curl -XPOST -H "Content-type: application/json" -d '{"piste":{"piste_id":6229}}' 'http://127.0.0.1:3000/api/pistes/canvas'
-
+```
 
 ## Future improvements
 
