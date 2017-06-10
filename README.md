@@ -45,7 +45,7 @@ __Search an off-piste line by name or partial name__
 
 POST `/pistes/search-name`
 
-`{ pistes: { name: "Crochues-Berard Traverse" } }`
+`{ piste: { name: "Crochues-Berard Traverse" } }`
 
 ```
 curl -XPOST -H "Content-type: application/json" -d '{"piste": {"name": "Crochues-Berard Traverse"}}' 'http://127.0.0.1:3000/api/pistes/search-name'
